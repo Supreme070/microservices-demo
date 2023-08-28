@@ -3,10 +3,10 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = 'Supreme070:Badboy123'
+        DOCKER_HUB_CREDENTIALS = 'supreme070:Badboy123'
         AWS_ACCESS_KEY_ID = 'AKIA5TCF5DW2CRGE5KPF'
         AWS_SECRET_ACCESS_KEY = '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'
-        DOCKER_HUB_CREDENTIALS_USERNAME = 'Supreme070'
+        DOCKER_HUB_CREDENTIALS_USERNAME = 'supreme070'
     }
 
     stages {
@@ -14,10 +14,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/adservice:${env.BUILD_ID} -f src/adservice/Dockerfile ."
+                    sh "docker build -t supreme070/adservice:${env.BUILD_ID} -f src/adservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/adservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/adservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/adservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/adservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -27,10 +27,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/cartservice:${env.BUILD_ID} -f src/cartservice/src/Dockerfile ."
+                    sh "docker build -t supreme070/cartservice:${env.BUILD_ID} -f src/cartservice/src/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/cartservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/cartservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/cartservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/cartservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -40,10 +40,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/checkoutservice:${env.BUILD_ID} -f src/checkoutservice/Dockerfile ."
+                    sh "docker build -t supreme070/checkoutservice:${env.BUILD_ID} -f src/checkoutservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/checkoutservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/checkoutservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/checkoutservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/checkoutservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -53,10 +53,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/currencyservice:${env.BUILD_ID} -f src/currencyservice/Dockerfile ."
+                    sh "docker build -t supreme070/currencyservice:${env.BUILD_ID} -f src/currencyservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/currencyservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/currencyservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/currencyservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/currencyservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -66,10 +66,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/emailservice:${env.BUILD_ID} -f src/emailservice/Dockerfile ."
+                    sh "docker build -t supreme070/emailservice:${env.BUILD_ID} -f src/emailservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/emailservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/emailservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/emailservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/emailservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -79,10 +79,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/frontend:${env.BUILD_ID} -f src/frontend/Dockerfile ."
+                    sh "docker build -t supreme070/frontend:${env.BUILD_ID} -f src/frontend/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/frontend:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/frontend:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/frontend:${env.BUILD_ID}").push()
+                        docker.image("supreme070/frontend:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -92,10 +92,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/loadgenerator:${env.BUILD_ID} -f src/loadgenerator/Dockerfile ."
+                    sh "docker build -t supreme070/loadgenerator:${env.BUILD_ID} -f src/loadgenerator/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/loadgenerator:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/loadgenerator:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/loadgenerator:${env.BUILD_ID}").push()
+                        docker.image("supreme070/loadgenerator:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -105,10 +105,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/paymentservice:${env.BUILD_ID} -f src/paymentservice/Dockerfile ."
+                    sh "docker build -t supreme070/paymentservice:${env.BUILD_ID} -f src/paymentservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/paymentservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/paymentservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/paymentservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/paymentservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -118,10 +118,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/productcatalogservice:${env.BUILD_ID} -f src/productcatalogservice/Dockerfile ."
+                    sh "docker build -t supreme070/productcatalogservice:${env.BUILD_ID} -f src/productcatalogservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/productcatalogservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/productcatalogservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/productcatalogservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/productcatalogservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -131,10 +131,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/recommendationservice:${env.BUILD_ID} -f src/recommendationservice/Dockerfile ."
+                    sh "docker build -t supreme070/recommendationservice:${env.BUILD_ID} -f src/recommendationservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/recommendationservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/recommendationservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/recommendationservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/recommendationservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -144,10 +144,10 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "docker build -t Supreme070/shippingservice:${env.BUILD_ID} -f src/shippingservice/Dockerfile ."
+                    sh "docker build -t supreme070/shippingservice:${env.BUILD_ID} -f src/shippingservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("Supreme070/shippingservice:${env.BUILD_ID}").push()
-                        docker.image("Supreme070/shippingservice:${env.BUILD_ID}").push('latest')
+                        docker.image("supreme070/shippingservice:${env.BUILD_ID}").push()
+                        docker.image("supreme070/shippingservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -158,8 +158,8 @@ pipeline {
                 script {
                     def microservices = ['adservice', 'cartservice', 'checkoutservice', 'currencyservice', 'emailservice', 'frontend', 'loadgenerator', 'paymentservice', 'productcatalogservice', 'recommendationservice', 'shippingservice']
                     microservices.each { microserviceName ->
-                        sh "docker rmi -f Supreme070/${microserviceName}:${env.BUILD_ID}"
-                        sh "docker rmi -f Supreme070/${microserviceName}:latest"
+                        sh "docker rmi -f supreme070/${microserviceName}:${env.BUILD_ID}"
+                        sh "docker rmi -f supreme070/${microserviceName}:latest"
                     }
                 }
             }
