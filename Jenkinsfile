@@ -27,8 +27,8 @@ pipeline {
                     docker build -t Supreme070/adservice:4 -f /home/ubuntu/microservices-demo/src/adservice/Dockerfile /home/ubuntu/microservices-demo/src/adservice
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/adservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/adservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/adservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/adservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -61,8 +61,8 @@ pipeline {
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/checkoutservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/checkoutservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/checkoutservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/checkoutservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -73,13 +73,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/currencyservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/currencyservice/Dockerfile /home/ubuntu/microservices-demo/src/currencyservice/")
+                    docker.build("Supreme070/currencyservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/currencyservice/Dockerfile /home/ubuntu/microservices-demo/src/currencyservice/")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/currencyservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/currencyservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/currencyservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/currencyservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -90,13 +90,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/emailservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/emailservice/Dockerfile /home/ubuntu/microservices-demo/src/emailservice/")
+                    docker.build("Supreme070/emailservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/emailservice/Dockerfile /home/ubuntu/microservices-demo/src/emailservice/")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/emailservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/emailservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/emailservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/emailservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -107,13 +107,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/frontend:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/frontend/Dockerfile /home/ubuntu/microservices-demo/src/frontend/")
+                    docker.build("Supreme070/frontend:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/frontend/Dockerfile /home/ubuntu/microservices-demo/src/frontend/")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/frontend:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/frontend:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/frontend:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/frontend:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -124,13 +124,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/loadgenerator:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/loadgenerator/Dockerfile /home/ubuntu/microservices-demo/src/loadgenerator/")
+                    docker.build("Supreme070/loadgenerator:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/loadgenerator/Dockerfile /home/ubuntu/microservices-demo/src/loadgenerator/")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/loadgenerator:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/loadgenerator:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/loadgenerator:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/loadgenerator:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -141,13 +141,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/paymentservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/paymentservice/Dockerfile /home/ubuntu/microservices-demo/src/paymentservice/")
+                    docker.build("Supreme070/paymentservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/paymentservice/Dockerfile /home/ubuntu/microservices-demo/src/paymentservice/")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/paymentservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/paymentservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/paymentservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/paymentservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -157,13 +157,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/productcatalogservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/productcatalogservice/Dockerfile /home/ubuntu/microservices-demo/src/productcatalogservice")
+                    docker.build("Supreme070/productcatalogservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/productcatalogservice/Dockerfile /home/ubuntu/microservices-demo/src/productcatalogservice")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/productcatalogservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/productcatalogservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/productcatalogservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/productcatalogservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -173,13 +173,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/recommendationservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/recommendationservice/Dockerfile /home/ubuntu/microservices-demo/src/recommendationservice")
+                    docker.build("Supreme070/recommendationservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/recommendationservice/Dockerfile /home/ubuntu/microservices-demo/src/recommendationservice")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/recommendationservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/recommendationservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/recommendationservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/recommendationservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -189,13 +189,13 @@ pipeline {
                 script {
                     //build adservice
                     checkout scm
-                    docker.build("thecodegirl/shippingservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/shippingservice/Dockerfile /home/ubuntu/microservices-demo/src/shippingservice")
+                    docker.build("Supreme070/shippingservice:${env.BUILD_ID}", "-f /home/ubuntu/microservices-demo/src/shippingservice/Dockerfile /home/ubuntu/microservices-demo/src/shippingservice")
 
                     //push to docker hub
                     
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
-                        docker.image("thecodegirl/shippingservice:${env.BUILD_ID}").push()
-                        docker.image("thecodegirl/shippingservice:${env.BUILD_ID}").push('latest')
+                        docker.image("Supreme070/shippingservice:${env.BUILD_ID}").push()
+                        docker.image("Supreme070/shippingservice:${env.BUILD_ID}").push('latest')
                     }
                 }
             }
@@ -205,8 +205,8 @@ pipeline {
                 script {
                     def microservices = ['adservice', 'cartservice', 'checkoutservice', 'currencyservice', 'emailservice', 'frontend', 'loadgenerator', 'paymentservice', 'productcatalogservice', 'recommendationservice', 'shippingservice' ]
                     microservices.each { microserviceName ->
-                        sh "docker rmi -f thecodegirl/${microserviceName}:${env.BUILD_ID}"
-                        sh "docker rmi -f thecodegirl/${microserviceName}:latest"
+                        sh "docker rmi -f Supreme070/${microserviceName}:${env.BUILD_ID}"
+                        sh "docker rmi -f Supreme070/${microserviceName}:latest"
                     }
                 }
             }
@@ -219,7 +219,7 @@ pipeline {
                         $class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY'
                         ]]) {
                         sh "aws eks --region us-west-2 update-kubeconfig --name eks-cluster"
-                        sh "kubectl apply -f /var/lib/jenkins/kubernetes-manifests.yaml"
+                        sh "kubectl apply -f /home/ubuntu/microservices-demo/release/kubernetes-manifests.yaml"
                     }
                 }
             }
