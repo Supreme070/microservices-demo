@@ -9,16 +9,8 @@ pipeline {
         DOCKER_HUB_CREDENTIALS_USERNAME = 'Supreme070'
         //registry = "YourDockerhubAccount/YourRepository"
         //registryCredential = 'dockerhub_id'
-        
     }
     stages {
-        //stage('Login to Docker Hub') {
-            //steps {
-               // script {
-                        //sh "echo ${DOCKER_HUB_CREDENTIALS} | docker login -u ${DOCKER_HUB_CREDENTIALS_USERNAME} --password-stdin"
-                //}
-            //}     	                      	  
-        //}
         stage('Build adservice and push to dockerhub') {
             steps {
                 script {
@@ -235,17 +227,17 @@ pipeline {
                     kubeConfig = readFile("${HOME}/.kube/config")
                     sh """
                     echo '$kubeConfig' > kubeconfig.yaml
-                    kubectl set image deployment/adservice server=thecodegirl/adservice:${env.BUILD_ID}
-                    kubectl set image deployment/cartservice server=thecodegirl/cartservice:${env.BUILD_ID}
-                    kubectl set image deployment/checkoutservice server=thecodegirl/checkoutservice:${env.BUILD_ID}
-                    kubectl set image deployment/currencyservice server=thecodegirl/currencyservice:${env.BUILD_ID}
-                    kubectl set image deployment/emailservice server=thecodegirl/emailservice:${env.BUILD_ID}
-                    kubectl set image deployment/frontend server=thecodegirl/frontend:${env.BUILD_ID}
-                    kubectl set image deployment/loadgenerator frontend-check=thecodegirl/loadgenerator:${env.BUILD_ID}
-                    kubectl set image deployment/paymentservice server=thecodegirl/paymentservice:${env.BUILD_ID}
-                    kubectl set image deployment/productcatalogservice server=thecodegirl/productcatalogservice:${env.BUILD_ID}
-                    kubectl set image deployment/recommendationservice server=thecodegirl/recommendationservice:${env.BUILD_ID}
-                    kubectl set image deployment/shippingservice server=thecodegirl/shippingservice:${env.BUILD_ID}
+                    kubectl set image deployment/adservice server=Supreme070/adservice:${env.BUILD_ID}
+                    kubectl set image deployment/cartservice server=Supreme070/cartservice:${env.BUILD_ID}
+                    kubectl set image deployment/checkoutservice server=Supreme070/checkoutservice:${env.BUILD_ID}
+                    kubectl set image deployment/currencyservice server=Supreme070/currencyservice:${env.BUILD_ID}
+                    kubectl set image deployment/emailservice server=Supreme070/emailservice:${env.BUILD_ID}
+                    kubectl set image deployment/frontend server=Supreme070/frontend:${env.BUILD_ID}
+                    kubectl set image deployment/loadgenerator frontend-check=Supreme070/loadgenerator:${env.BUILD_ID}
+                    kubectl set image deployment/paymentservice server=Supreme070/paymentservice:${env.BUILD_ID}
+                    kubectl set image deployment/productcatalogservice server=Supreme070/productcatalogservice:${env.BUILD_ID}
+                    kubectl set image deployment/recommendationservice server=Supreme070/recommendationservice:${env.BUILD_ID}
+                    kubectl set image deployment/shippingservice server=Supreme070/shippingservice:${env.BUILD_ID}
                     """
                 }
             }
