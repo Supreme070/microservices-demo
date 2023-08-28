@@ -1,25 +1,20 @@
-@Library('github.com/releaseworks/jenkinslib') _
+pipeline {
 
-agent {
-  docker {
-    image 'docker:latest'
-    args '-u root' 
+  agent any
+
+  environment {
+    DOCKER_HUB_CREDENTIALS = 'Supreme070:Badboy123'
+    AWS_ACCESS_KEY_ID = 'AKIA5TCF5DW2CRGE5KPF'
+    AWS_SECRET_ACCESS_KEY = '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'
   }
-}
 
-environment {
-  DOCKER_HUB_CREDENTIALS = 'Supreme070:Badboy123'
-  AWS_ACCESS_KEY_ID = 'AKIA5TCF5DW2CRGE5KPF'
-  AWS_SECRET_ACCESS_KEY = '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' 
-}
+  stages {
 
-stages {
+    stage('Build Images') {
 
-  stage('Build and Push Images') {
+      steps {
 
-    steps {
-    
-      script {
+        script {
       
         // Build and push adservice
         docker.build("thecodegirl/adservice:${env.BUILD_ID}", "-f ./microservices-demo/src/adservice/Dockerfile /var/lib/jenkins/adservice")
@@ -104,40 +99,35 @@ stages {
 
   }
 
-  stage('Deploy to EKS') {
+    stage('Deploy') {
 
-    steps {
-    
-      script {
-      
-        withCredentials([
-          usernamePassword(credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')
-        ]) {
+      steps {
+
+        script {
         
-          sh "aws eks --region us-east-1 update-kubeconfig --name eks-cluster"
-          sh "kubectl apply -f /var/lib/jenkins/kubernetes-manifests.yaml"
+          withCredentials([usernamePassword(credentialsId: 'aws-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
           
+            sh "aws eks --region us-east-1 update-kubeconfig --name eks-cluster"  
+            sh "kubectl apply -f /var/lib/jenkins/kubernetes-manifests.yaml"
+            
+          }
+        
         }
       
       }
-    
+
     }
 
-  }
-  
-  stage('Cleanup') {
-  
-    steps {
+    stage('Cleanup') {
     
-      script {
+      steps {
       
-        // Cleanup old docker images
         sh "docker image prune -af"
       
       }
     
     }
-  
+
   }
 
 }
