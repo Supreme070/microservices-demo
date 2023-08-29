@@ -19,7 +19,8 @@ WORKDIR /app
 COPY . .
 RUN mkdir gradlew 
 COPY ["build.gradle", "gradlew", "./"]
-COPY gradle gradle
+COPY ["gradle", "gradle", "./"]
+#COPY gradle gradle
 RUN chmod +x gradlew
 RUN ./gradlew downloadRepos
 
