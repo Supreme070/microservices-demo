@@ -16,12 +16,13 @@ FROM eclipse-temurin:19@sha256:17e3d3b61ca4a7606490f596feb77f69980939fecacf91a1f
 
 WORKDIR /app
 
+COPY . .
+RUN mkdir gradlew 
 COPY ["build.gradle", "gradlew", "./"]
 COPY gradle gradle
 RUN chmod +x gradlew
 RUN ./gradlew downloadRepos
 
-COPY . .
 RUN chmod +x gradlew
 RUN ./gradlew installDist
 
