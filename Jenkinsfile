@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     checkout scm
-                    sh "sudo docker build -t supreme070/adservice:${env.BUILD_ID} -f src/adservice/Dockerfile ."
+                    sh "sudo docker build --no-cache -t supreme070/adservice:${env.BUILD_ID} -f src/adservice/Dockerfile ."
                     docker.withRegistry('https://registry.hub.docker.com', DOCKER_HUB_CREDENTIALS) {
                         docker.image("supreme070/adservice:${env.BUILD_ID}").push()
                         docker.image("supreme070/adservice:${env.BUILD_ID}").push('latest')
