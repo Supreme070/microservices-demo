@@ -8,7 +8,7 @@ backoff==2.2.1
     # via opentelemetry-exporter-otlp-proto-grpc
 cachetools==5.3.1
     # via google-auth
-certifi==2023.7.22
+certifi==2024.7.4
     # via requests
 charset-normalizer==3.2.0
     # via requests
@@ -57,11 +57,11 @@ httplib2==0.22.0
     # via
     #   google-api-python-client
     #   google-auth-httplib2
-idna==3.4
+idna==3.7
     # via requests
 importlib-metadata==6.0.1
     # via opentelemetry-api
-jinja2==3.1.2
+jinja2==3.1.6
     # via -r requirements.in
 markupsafe==2.1.3
     # via jinja2
@@ -119,7 +119,7 @@ pyparsing==3.1.1
     # via httplib2
 python-json-logger==2.0.7
     # via -r requirements.in
-requests==2.31.0
+requests==2.32.2
     # via
     #   -r requirements.in
     #   google-api-core
@@ -134,7 +134,7 @@ typing-extensions==4.7.1
     # via opentelemetry-sdk
 uritemplate==4.1.1
     # via google-api-python-client
-urllib3==1.26.16
+urllib3==1.26.19
     # via
     #   google-auth
     #   requests
@@ -143,7 +143,7 @@ wrapt==1.15.0
     #   deprecated
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-grpc
-zipp==3.16.2
+zipp==3.19.1
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

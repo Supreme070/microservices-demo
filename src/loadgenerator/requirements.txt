@@ -8,7 +8,7 @@ blinker==1.6.2
     # via flask
 brotli==1.0.9
     # via geventhttpclient
-certifi==2023.7.22
+certifi==2024.7.4
     # via
     #   geventhttpclient
     #   requests
@@ -25,9 +25,9 @@ flask==2.3.2
     #   locust
 flask-basicauth==0.2.0
     # via locust
-flask-cors==4.0.0
+flask-cors==4.0.2
     # via locust
-gevent==23.7.0
+gevent==23.9.0
     # via
     #   geventhttpclient
     #   locust
@@ -35,11 +35,11 @@ geventhttpclient==2.0.9
     # via locust
 greenlet==2.0.2
     # via gevent
-idna==3.4
+idna==3.7
     # via requests
 itsdangerous==2.1.2
     # via flask
-jinja2==3.1.2
+jinja2==3.1.6
     # via flask
 locust==2.15.1
     # via -r requirements.in
@@ -53,7 +53,7 @@ psutil==5.9.5
     # via locust
 pyzmq==25.1.0
     # via locust
-requests==2.31.0
+requests==2.32.2
     # via locust
 roundrobin==0.0.4
     # via locust
@@ -61,9 +61,9 @@ six==1.16.0
     # via geventhttpclient
 typing-extensions==4.7.1
     # via locust
-urllib3==2.0.2
+urllib3==2.2.2
     # via requests
-werkzeug==2.3.6
+werkzeug==3.0.6
     # via
     #   flask
     #   locust
